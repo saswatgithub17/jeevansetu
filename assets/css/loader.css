@@ -1,0 +1,75 @@
+/* Using a Google Font (Poppins for modern clean feel) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-red: #990000; /* Deep Red for Blood Droplet */
+    --primary-blue: #007bff; /* Trustworthy Blue */
+    --background-color: #f8f9fa; /* Light Gray Background */
+    --text-color: #343a40;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Hide scrollbar during loading */
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#loader-container {
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out; /* Smooth fade-out effect */
+}
+
+#threejs-canvas {
+    /* Container for the 3D model */
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.project-title {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-red);
+    letter-spacing: 2px;
+    animation: pulse-shadow 2s infinite alternate; /* Subtle breathing effect */
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+.loading-bar {
+    width: 250px;
+    height: 5px;
+    margin: 30px auto 0 auto;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-blue);
+    transition: width 0.5s ease-in-out;
+}
+
+/* Custom Keyframe Animation for the project title */
+@keyframes pulse-shadow {
+    0% {
+        text-shadow: 0 0 5px rgba(153, 0, 0, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(153, 0, 0, 0.8);
+    }
+}
